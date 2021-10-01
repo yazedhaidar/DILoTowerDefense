@@ -54,11 +54,11 @@ public class LevelManager : MonoBehaviour
 
         InstantiateAllTowerUI ();
     }
-
+  
     private void Update ()
     {
         // Jika menekan tombol R, fungsi restart akan terpanggil
-        if (Input.GetKeyDown (KeyCode.R))
+        if (Input.GetKeyUp (KeyCode.Return))
         {
             SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
         }
@@ -230,7 +230,7 @@ public class LevelManager : MonoBehaviour
     {
         IsOver = true;
 
-        _statusInfo.text = isWin ? "You Win!" : "You Lose!";
+        _statusInfo.text = isWin ? "You Win!\nEnter to Restart" : "You Lose!\nEnter to Restart";
         _panel.gameObject.SetActive (true);
     }
 
